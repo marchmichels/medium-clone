@@ -87,7 +87,6 @@ export const getServerSideProps = async () => {
     props: {
       posts,
     },
-    revalidate: 60, // update cache every 60 seconds
   };
 
 }
