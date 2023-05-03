@@ -23,7 +23,11 @@ function Post({ post }: Props) {
 
 
 
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm<IFormInput>();
 
     const onSubmit: SubmitHandler<IFormInput> = async (data) => {
         await fetch('/api/createComment', {
@@ -161,7 +165,7 @@ function Post({ post }: Props) {
             {/* Comments */}
             <div className="flex flex-col p-10 my-10 max-w-2xl mx-auto shadow-yellow-500 shadow space-y-2">
                 <h3 className="text-4xl">Comments</h3>
-                <hr className="pb-2"/>
+                <hr className="pb-2" />
                 {post.comments.map((comment) => (
                     <div key={comment._id}>
                         <p>
